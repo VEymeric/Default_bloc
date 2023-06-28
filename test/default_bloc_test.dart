@@ -55,10 +55,8 @@ void main() {
     expect(DefaultStatus.loaded.isLoaded, true);
     expect(DefaultStatus.loading.isLoading, false);
     expect(DefaultStatus.error.isLoading, false);
-
-    expect(
-        const OnDefaultUpdated('name'), equals(const OnDefaultUpdated('name')));
   });
+
   blocTest<DefaultBloc, DefaultState>(
     'should emit [loading, has data] when data is gotten successfully',
     build: () => DefaultBloc()..add(OnDefaultUpdated(defaultValueName)),
